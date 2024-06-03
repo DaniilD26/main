@@ -9,7 +9,7 @@
         </div>
             
         <div class="main-blok-image">
-            <img class="imageMain" src="{{url('public/images/main2.jpg')}}" alt="image main">
+            <img class="imageMain" src="{{asset('/images/main2.jpg')}}" alt="image main">
         </div>
     </div>
     
