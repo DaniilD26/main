@@ -43,6 +43,15 @@ Route::get('/menu/{menu}/edit', [MenuController::class, 'edit'])->name('menu.edi
 Route::patch('/menu/{menu}', [MenuController::class, 'update'])->name('menu.update');
 Route::delete('/menu/{menu}', [MenuController::class, 'destroy'])->name('menu.destroy');
 
+
+Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');//Создание формы регистрации
+Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');//Регистрация пользователя
+Route::get('/order/{order}', [OrderController::class, 'show'])->name('orders.show');
+Route::get('/orders/{order}/edit', [OrderController::class, 'edit'])->name('orders.edit');
+Route::patch('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
+Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('orders.destroy');
+
 //Вход в административную панель
 Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('/admin',[UserController::class,'admin'])->name('admin');

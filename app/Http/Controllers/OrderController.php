@@ -9,13 +9,8 @@ use App\Generators\StringGenerator;
 
 use Illuminate\Http\Request;
 
-class MenuController extends Controller
+class OrderController extends Controller
 {
-
-    
-
-    
-
     public function index()
     {
         $string = app('string.generator')->generate();
