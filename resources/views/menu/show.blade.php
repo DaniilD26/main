@@ -7,11 +7,7 @@
             <img src="{{  '/storage/app/'.$menu->card }}" class="card-img-top" alt="Изображение товара">
             <img src="{{  asset($menu->card)}}" class="card-img-top" alt="Изображение товара">
             <img src="{{  '/storage/'.$menu->card }}" class="card-img-top" alt="Изображение товара">
-            <img src="{{ asset('storage/images/картинка.jpg') }}" alt="Картинка"> 
-            <img src="{{ asset($menu->card) }}" alt="Картинка"> 
-           
-            {{-- <img src="\storage\app\public\images\vlTcrvdej7FZ5YllolqCOHgNZiyVHZYW8Ar3jN5o.webp" class="card-img-top" alt="Изображение товара"> --}}
-
+            <img src="{{ asset('storage/'.$menu->card) }}" class="card-img-top" alt="Картинка">
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 <ul class="list-group list-group-flush">
