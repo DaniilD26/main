@@ -4,10 +4,9 @@
     <div class="container">
     
         <div class="card" style="width: 30rem;">
-            <img src="{{  '/storage/app/'.$menu->card }}" class="card-img-top" alt="Изображение товара">
-            <img src="{{  asset($menu->card)}}" class="card-img-top" alt="Изображение товара">
-            <img src="{{  '/storage/'.$menu->card }}" class="card-img-top" alt="Изображение товара">
             <img src="{{ asset('storage/'.$menu->card) }}" class="card-img-top" alt="Картинка">
+            <img src="{{ asset('storage/default.png') }}" class="card-img-top" alt="Картинка">
+           
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 <ul class="list-group list-group-flush">
