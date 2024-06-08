@@ -38,7 +38,10 @@ class MenuController extends Controller
     // Обработка загрузки изображения, если оно присутствует в запросе
     if ($request->hasFile('card')) {
         $image = $request->file('card');
-        $path = $image->store('public/images'); // Сохранение изображения в хранилище
+      
+        // $path = $image->store('public/images'); // Сохранение изображения в хранилище
+        $path = $image->store('images'); // Сохранение изображения в хранилище
+        
         $data['card'] = $path; // Сохраняем путь к изображению в базе данных
     }
 
@@ -48,6 +51,8 @@ class MenuController extends Controller
     // Перенаправление пользователя на страницу с блюдами
     return redirect()->route('menu.index');
 }
+
+
 
 //     public function store(Request $request)
 // {
