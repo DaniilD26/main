@@ -49,7 +49,7 @@ class MenuController extends Controller
         $image = $request->file('card');
     
         // Сохранение изображения в `storage/app/public/images`
-        $path = $image->store('images'); 
+        $path = $image->store('public'); 
     
         $data['card'] = $path; // Сохраняем путь к изображению в базе данных
     }
