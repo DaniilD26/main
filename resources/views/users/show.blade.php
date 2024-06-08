@@ -4,7 +4,8 @@
     <div class="container">
     
         <div class="card" style="width: 30rem;">
-            <img src="{{'/storage/app/'.$user->avatar }}" class="card-img-top" alt="Изображение товара">
+            <img src="{{ asset('storage/'.$menu->card) }}" class="card-img-top" alt="Картинка">
+
             <div class="card-body">
                 <h5 class="card-title">Профиль</h5>
             </div>
