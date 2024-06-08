@@ -5,7 +5,6 @@
     
         <div class="card" style="width: 30rem;">
             <img src="{{ asset('storage/'.$menu->card) }}" class="card-img-top" alt="Картинка">
-            <img src="{{ asset('storage/default.png') }}" class="card-img-top" alt="Картинка">
            
             <div class="card-body">
                 <h5 class="card-title"></h5>

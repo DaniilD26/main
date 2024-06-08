@@ -41,14 +41,22 @@ class UserController extends Controller
 
         if ($request->hasFile('avatar')) {
             $image = $request->file('avatar');
-            $path = $image->store('public/images'); // Сохранение изображения в хранилище
-            $data['avatar'] = $path; // Сохраняем путь к изображению в базе данных
+            $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/', $imageName);
+            $data['avatar'] = $imageName; // Сохраняем путь к изображению в базе данных
+        }else {
+            // Если файл не загружен, используем 'default.png'
+            $data['avatar'] = 'defaultAvatar.jpg';
         }
         // Создаём нового пользователя
         User::create($data);
 
         return redirect()->route('users.index');
     }
+
+
+
+
 
     public function show(User $user)
     {
