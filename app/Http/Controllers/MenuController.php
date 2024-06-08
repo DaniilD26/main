@@ -72,7 +72,7 @@ class MenuController extends Controller
         return view('menu.show', compact('menu'));
     }
 
-    public function edit(Menu $menu)
+    public function edit(Menu $menu, Request $request)
     {
         $menuCategories = MenuCategory::all();
         return view('menu.edit', compact('menu','menuCategories'));
@@ -91,6 +91,24 @@ class MenuController extends Controller
             // 'id_role' => 'integer'
 
         ]);
+
+        if ($request->hasFile('card')) {
+            $image = $request->file('card');
+        
+            // Генерируем уникальное имя файла
+            $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
+        
+            // Сохраняем изображение в `storage/app/public/images`
+            $path = $image->storeAs('public/', $imageName);
+        
+            // Сохраняем только имя файла в базу данных
+            $data['card'] = $imageName; 
+        
+            // ... (Сохранение данных в базу данных)
+        }else {
+            // Если файл не загружен, используем 'default.png'
+            $data['card'] = 'default.png';
+        }
         $menu->update($data);
         return redirect()->route('menu.show', $menu->id);
         // dd($data);
