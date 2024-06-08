@@ -70,7 +70,7 @@ class UserController extends Controller
         return view('users.edit', compact('user', 'statuses'));
     }
 
-    public function update(User $user){
+    public function update(User $user, Request $request){
         $data = request()->validate([
             'login' => '',
             'id_status' => '',
