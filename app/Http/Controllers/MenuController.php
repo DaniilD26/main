@@ -66,55 +66,15 @@ class MenuController extends Controller
 
 
 }
-
-
-
-//     public function store(Request $request)
-// {
-
-//     $data = $request->validate([
-//         'name' => 'required|string|max:255|unique:menu',
-//         'description' => 'required|string|max:255',
-//         'price' => 'integer',
-//         'id_menu_category' => 'integer',
-//         'card' => '',
-//     ]);
-
-//     // if ($request->hasFile('image')) {
-//     //     $image = $request->file('image');
-
-//     //     // Сохранить изображение в хранилище
-//     //     $path = $image->store('public/images');
-
-//     //     // Получить URL-адрес изображения
-//     //     $url = asset('storage/' . $path);
-
-//     //     $data['card'] = $url;
-//     // }
-//     // $path = $request->file('card')->store('public/images', 'public');
-//     // $data['card'] = asset('storage/app/' . $path);
-
-//     if ($request->hasFile('card')) {
-//         $image = $request->file('card');
-//         $path = $image->store('public/images', 'public'); // Сохранение изображения в хранилище
-//         $data['card'] = asset('storage/' . $path); // Получение URL изображения
-//     }
-
-//     Menu::create($data);
-
-//     return redirect()->route('menu.index');
-// }
     
     public function show(Menu $menu)
     {
-        // return view('users.show', ['user' => $user->id]);
         return view('menu.show', compact('menu'));
     }
 
     public function edit(Menu $menu)
     {
         $menuCategories = MenuCategory::all();
-        // return view('users.show', ['user' => $user->id]);
         return view('menu.edit', compact('menu','menuCategories'));
     }
     public function update(Menu $menu){
