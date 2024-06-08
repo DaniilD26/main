@@ -72,12 +72,12 @@ class MenuController extends Controller
         return view('menu.show', compact('menu'));
     }
 
-    public function edit(Menu $menu, Request $request)
+    public function edit(Menu $menu)
     {
         $menuCategories = MenuCategory::all();
         return view('menu.edit', compact('menu','menuCategories'));
     }
-    public function update(Menu $menu){
+    public function update(Menu $menu, Request $request){
         $data = request()->validate([
             'name' => '',
             'description' => '',
