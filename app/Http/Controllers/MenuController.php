@@ -69,6 +69,9 @@ class MenuController extends Controller
         $data['card'] = $imageName; 
     
         // ... (Сохранение данных в базу данных)
+    }else {
+        // Если файл не загружен, используем 'default.png'
+        $data['card'] = 'default.png';
     }
 
 
