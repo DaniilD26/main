@@ -45,20 +45,43 @@ class MenuController extends Controller
     //     $data['card'] = $path; // Сохраняем путь к изображению в базе данных
     // }
 
+    // if ($request->hasFile('card')) {
+    //     $image = $request->file('card');
+    
+    //     // Сохранение изображения в `storage/app/public/images`
+    //     $path = $image->store(); 
+    
+    //     $data['card'] = $path; // Сохраняем путь к изображению в базе данных
+    // }
+
+
+
     if ($request->hasFile('card')) {
         $image = $request->file('card');
     
-        // Сохранение изображения в `storage/app/public/images`
-        $path = $image->store(); 
+        // Генерируем уникальное имя файла
+        $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
     
-        $data['card'] = $path; // Сохраняем путь к изображению в базе данных
+        // Сохраняем изображение в `storage/app/public/images`
+        $path = $image->storeAs('public/', $imageName);
+    
+        // Сохраняем только имя файла в базу данных
+        $data['card'] = $imageName; 
+    
+        // ... (Сохранение данных в базу данных)
     }
+
 
     // Создание записи о блюде в базе данных
     Menu::create($data);
 
     // Перенаправление пользователя на страницу с блюдами
     return redirect()->route('menu.index');
+
+
+   
+
+
 }
 
 
