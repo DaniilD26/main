@@ -36,12 +36,21 @@ class MenuController extends Controller
     ]);
 
     // Обработка загрузки изображения, если оно присутствует в запросе
+    // if ($request->hasFile('card')) {
+    //     $image = $request->file('card');
+      
+    //     $path = $image->store('public/images'); // Сохранение изображения в хранилище
+    //     // $path = $image->store('/images'); // Сохранение изображения в хранилище
+        
+    //     $data['card'] = $path; // Сохраняем путь к изображению в базе данных
+    // }
+
     if ($request->hasFile('card')) {
         $image = $request->file('card');
-      
-        $path = $image->store('public/images'); // Сохранение изображения в хранилище
-        // $path = $image->store('/images'); // Сохранение изображения в хранилище
-        
+    
+        // Сохранение изображения в `storage/app/public/images`
+        $path = $image->store('images'); 
+    
         $data['card'] = $path; // Сохраняем путь к изображению в базе данных
     }
 
