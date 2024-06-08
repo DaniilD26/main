@@ -39,8 +39,8 @@ class MenuController extends Controller
     if ($request->hasFile('card')) {
         $image = $request->file('card');
       
-        // $path = $image->store('public/images'); // Сохранение изображения в хранилище
-        $path = $image->store('images'); // Сохранение изображения в хранилище
+        $path = $image->store('public/images'); // Сохранение изображения в хранилище
+        // $path = $image->store('/images'); // Сохранение изображения в хранилище
         
         $data['card'] = $path; // Сохраняем путь к изображению в базе данных
     }
