@@ -31,7 +31,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = request()->validate([
-            'login' => 'required|string|max:255|unique:users',
+            'login' => 'required|min:5|string|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'id_role' => 'integer'
         ]);
@@ -51,7 +51,7 @@ class UserController extends Controller
         // Создаём нового пользователя
         User::create($data);
 
-        return redirect()->route('users.index');
+        return redirect()->route('login.create');
     }
 
 
