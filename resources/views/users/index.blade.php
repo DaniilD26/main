@@ -8,6 +8,7 @@
                 <td>Роль</td>
                 <td>Статус</td>
                 <td>подробнее</td>
+                <td>удаление</td>
             </tr>
             @foreach($users as $user)
                 <tr>

@@ -48,8 +48,6 @@ placeholder="Подтвердите пароль">
             <option value="{{$role->id}}">{{$role->role}}</option>
         @endforeach
     </select>
-    {{-- <input type="text" name="id_role" class="form-control"
-   placeholder="1-админ, 2-официант, 3-повар"><!-- was role_id --> --}}
     </div>
  </div>
  <div class="col-xs-12 col-sm-12 col-md-12 text-center">
