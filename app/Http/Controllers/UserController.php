@@ -32,7 +32,7 @@ class UserController extends Controller
     {
         $data = request()->validate([
             'login' => 'required|min:5|string|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8|confirmed|regex:/[a-zA-Z]/',
             'id_role' => 'integer'
         ]);
 
