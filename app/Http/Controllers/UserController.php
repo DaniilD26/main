@@ -32,7 +32,15 @@ class UserController extends Controller
     {
         $data = request()->validate([
             'login' => 'required|min:5|string|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed|regex:/[a-zA-Z]/',
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'confirmed',
+                'regex:/[a-zA-Z]/',
+                'message' => 'Пароль должен содержать как минимум одну букву латинского алфавита (a-z, A-Z).',
+            ],
+            // 'password' => 'required|string|min:8|confirmed|regex:/[a-zA-Z]/',
             'id_role' => 'integer'
         ]);
 
