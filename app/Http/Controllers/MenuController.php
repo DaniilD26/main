@@ -114,8 +114,8 @@ class MenuController extends Controller
         // dd($data);
     }
 
-    public function destroy(Menu $menu){
+    public function destroy($id){
         $menu->delete();
-        return redirect()->route('menu.index', $menu->id);
+        return redirect()->route('menu.index');
     }
 }
