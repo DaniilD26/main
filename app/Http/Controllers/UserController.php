@@ -104,9 +104,9 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('users.index');
     }
-    public function admin(){
-        return view('admin');
-    }
+    // public function admin(){
+    //     return view('admin');
+    // }
 
     public function login(Request $request)
     {

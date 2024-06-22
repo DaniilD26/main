@@ -54,7 +54,9 @@ Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('ord
 
 //Вход в административную панель
 Route::middleware(['auth','isAdmin'])->group(function () {
-    Route::get('/admin',[UserController::class,'admin'])->name('admin');
+    Route::get('/admin',[UserController::class,'login'])->name('admin');
+    // Route::get('/admin',[UserController::class,'admin'])->name('admin');
+
 });
 //Вход в личный кабинет
 Route::middleware(['auth'])->group(function () {
