@@ -99,9 +99,10 @@ class UserController extends Controller
         return redirect()->route('users.show', $user->id);
     }
 
-    public function destroy(User $user){
+    public function destroy($id){
+        $user = User::findOrFail($id); // Находим меню по id 
         $user->delete();
-        return redirect()->route('users.index', $user->id);
+        return redirect()->route('users.index');
     }
     public function admin(){
         return view('admin');

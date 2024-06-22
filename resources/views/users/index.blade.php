@@ -15,7 +15,14 @@
                     <td>{{$user->login}}</td>
                     <td>{{$user->role->role}}</td>
                     <td>{{$user->status->status}}</td>
-                    <td><a href="{{route('users.show', $user->id)}}">Подробнее</a></td>
+                    <td>
+                        {{-- <a href="{{route('users.show', $user->id)}}">Подробнее</a> --}}
+                        <form method="POST" action="{{route('users.destroy', $user->id)}}"  enctype="multipart/form-data">
+                            @csrf {{-- Встраиваем CSRF-токен --}}
+                            @method('DELETE') {{-- Указываем метод DELETE --}}
+                            <button type="submit">Удалить пользователя</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </table>
