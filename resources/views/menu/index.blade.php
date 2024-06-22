@@ -19,7 +19,7 @@
                     <td>{{$menu->price}} руб.</td>
                     <td><a href="{{route('menu.show', $menu)}}">Подробнее</a></td>
                     <td>
-                        <a href="{{route('menu.destroy', $menu->id)}}">Удалить</a>
+                        {{-- <a href="{{route('menu.destroy', $menu->id)}}">Удалить</a> --}}
                         <form method="POST" action="{{route('menu.destroy', $menu->id)}}"  enctype="multipart/form-data">
                             @csrf {{-- Встраиваем CSRF-токен --}}
                             @method('DELETE') {{-- Указываем метод DELETE --}}
