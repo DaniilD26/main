@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section("title","Главная")
+@section("title","Вкусно и удобно: Онлайн кафе Оазис")
 @section("content")
 <div class="main-home">
     <div class="main-blok">

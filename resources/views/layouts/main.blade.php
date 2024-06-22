@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta name="description" content="Добро пожаловать в Онлайн кафе Оазис! У нас вы найдете уютную атмосферу, вкусную еду, свежие десерты и ароматные напитки.">
-<meta name="keywords" content="Онлайн кафе Оазис, кафе, ресторан, еда, обед, ужин, завтрак, кофе, десерты">
+<meta name="keywords" content="Онлайн кафе Оазис, кафе, ресторан, еда, обед, ужин, завтрак, кофе, десерты,латте, капучино, пицца, перекус, горячие блюда, напитки, выпечка">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>

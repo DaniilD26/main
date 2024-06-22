@@ -115,7 +115,7 @@ class MenuController extends Controller
     }
 
     public function destroy(Menu $menu){
-        $user->delete();
+        $menu->delete();
         return redirect()->route('menu.index', $menu->id);
     }
 }
