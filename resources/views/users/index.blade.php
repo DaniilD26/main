@@ -16,7 +16,9 @@
                     <td>{{$user->role->role}}</td>
                     <td>{{$user->status->status}}</td>
                     <td>
-                        {{-- <a href="{{route('users.show', $user->id)}}">Подробнее</a> --}}
+                        <a href="{{route('users.show', $user->id)}}">Подробнее</a>
+                    </td>
+                    <td>
                         <form method="POST" action="{{route('users.destroy', $user->id)}}"  enctype="multipart/form-data">
                             @csrf {{-- Встраиваем CSRF-токен --}}
                             @method('DELETE') {{-- Указываем метод DELETE --}}
