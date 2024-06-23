@@ -69,9 +69,6 @@
     </div>
   </nav>
   </div>
-
-
-      {{-- <img src="{{asset('/images/onlajn-kassy.jpg')}}" alt="kassy"> --}}
       @yield('content')
   
 </div>

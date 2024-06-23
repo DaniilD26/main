@@ -94,13 +94,12 @@ class UserController extends Controller
             $data['avatar'] = 'defaultAvatar.jpg';
         }
         $user->update($data);
-        // dd($data);
 
         return redirect()->route('users.show', $user->id);
     }
 
     public function destroy($id){
-        $user = User::findOrFail($id); // Находим меню по id 
+        $user = User::findOrFail($id); // Находим пользователя по id 
         $user->delete();
         return redirect()->route('users.index');
     }

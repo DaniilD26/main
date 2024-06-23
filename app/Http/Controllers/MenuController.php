@@ -111,7 +111,6 @@ class MenuController extends Controller
         }
         $menu->update($data);
         return redirect()->route('menu.show', $menu->id);
-        // dd($data);
     }
 
     // public function destroy($id){
