@@ -107,6 +107,22 @@ class UserController extends Controller
         return view('admin');
     }
 
+
+    public function profile()
+    {
+        // Получаем текущего пользователя (аутентифицированного)
+        $user = Auth::user();
+
+        // Проверяем, что пользователь не пуст 
+        if ($user) {
+            // Отображаем страницу профиля
+            return view('profile', compact('user'));
+        } else {
+            // Если пользователь не авторизован, перенаправляем его на страницу входа
+            return redirect()->route('login.create'); 
+        }
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->only('login', 'password');
