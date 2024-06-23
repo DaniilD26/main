@@ -22,6 +22,6 @@
                    <a href="{{route('users.edit', $user->id)}}" class="card-link">Редактировать данные</a>
                     </div>
         </div>
-        <div class="back"><a href="{{route('users.index')}}" class="link">Назад</a></div>
+        {{-- <div class="back"><a href="{{route('users.index')}}" class="link">Назад</a></div> --}}
     </div>
 @endsection
