@@ -5,7 +5,7 @@
  
 <h1>Личный кабинет пользователя</h1>
 <h3>Привет, {{ Auth::user()->login }}!</h3>
-</div>
+
     
         <div class="card" style="width: 30rem;">
             <img src="{{ asset('storage/'.$user->avatar) }}" class="card-img-top" alt="Картинка">
@@ -22,9 +22,10 @@
                 <li class="list-group-item">Роль: <b>{{ $user->role->role }}</b></li>
                 <li class="list-group-item">Статус работника: <b>{{ $user->status->status }}</b></li>
 </ul>
-                 <div class="card-body">
+                 {{-- <div class="card-body">
                    <a href="{{route('users.edit', $user->id)}}" class="card-link">Редактировать данные</a>
-                    </div>
+                    </div> --}}
         </div>
     </div>
+</div>
 @endsection
