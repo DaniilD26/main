@@ -18,7 +18,7 @@
         <li class="list-group-item">Телефон: <b>{{ Auth::user()->phone }}</b></li>
         <li class="list-group-item">Возраст: <b>{{ Auth::user()->age }}</b></li>
         <li class="list-group-item">Роль: <b>{{ Auth::user()->role->role }}</b></li>
-        <li class="list-group-item">Статус работника: <b>{{ $user->status->status }}</b></li>
+        <li class="list-group-item">Статус работника: <b>{{ Auth::user()->status->status }}</b></li>
 </ul>
          <div class="card-body">
            <a href="{{route('users.edit', Auth::user()->id)}}" class="card-link">Редактировать данные</a>
